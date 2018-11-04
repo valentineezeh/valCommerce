@@ -1,0 +1,19 @@
+{
+  "name": "valcommerce",
+  "version": "1.0.0",
+  "description": "This is a ecommerce app that allow users post a product for sale and get list of products.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentineezeh/valCommerce.git"
+  },
+  "author": "Valentine Ezeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valentineezeh/valCommerce/issues"
+  },
+  "homepage": "https://github.com/valentineezeh/valCommerce#readme"
+}
