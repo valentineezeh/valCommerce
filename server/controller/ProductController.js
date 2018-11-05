@@ -1,5 +1,4 @@
 import db from '../database/models';
-import parser from '../database/config/cloudinary';
 
 const product = db.Product;
 
@@ -17,10 +16,6 @@ class ProductController {
       Image
     } = req.body;
 
-    const image = {};
-    image.url = Image.url;
-    image.id = Image.public_id; 
-
     product.create({
       name: Name,
       description: Description,
@@ -34,7 +29,6 @@ class ProductController {
         newProduct
       });
     }).catch(error => {
-        console.log('>>>>', error);
       return res.status(500).json(error.message);
     });
   }
