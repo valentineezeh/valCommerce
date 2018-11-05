@@ -1,10 +1,10 @@
 import express from 'express';
-import ProductController from './controller/createProduct';
-import parser from './database/config/cloudinary';
+import ProductController from './controller/ProductController';
+import UserInputValidation from './middleware/userInputValidate';
 
 const router = express.Router();
 
-router.post('/product/create', parser.single('image'), ProductController.createProduct);
+router.post('/product/create', UserInputValidation.createProduct, ProductController.createProduct);
 
 
 export default router;
