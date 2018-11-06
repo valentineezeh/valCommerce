@@ -8,9 +8,9 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
-var _createProduct = require('./controller/createProduct');
+var _ProductController = require('./controller/ProductController');
 
-var _createProduct2 = _interopRequireDefault(_createProduct);
+var _ProductController2 = _interopRequireDefault(_ProductController);
 
 var _userInputValidate = require('./middleware/userInputValidate');
 
@@ -20,6 +20,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var router = _express2.default.Router();
 
-router.post('/product/create', _userInputValidate2.default.createProduct, _createProduct2.default.createProduct);
+router.post('/product/create', _userInputValidate2.default.createProduct, _ProductController2.default.createProduct);
+
+router.get('/product/', _ProductController2.default.getAllProducts);
 
 exports.default = router;
