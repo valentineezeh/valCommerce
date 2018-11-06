@@ -53,6 +53,15 @@ var ProductController = function () {
         return res.status(500).json(error.message);
       });
     }
+  }, {
+    key: 'getAllProducts',
+    value: function getAllProducts(req, res) {
+      product.all().then(function (products) {
+        res.status(200).json(products);
+      }).catch(function (error) {
+        return res.status(400).json(error.message);
+      });
+    }
   }]);
 
   return ProductController;

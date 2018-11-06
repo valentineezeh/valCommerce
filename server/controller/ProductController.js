@@ -32,6 +32,15 @@ class ProductController {
       return res.status(500).json(error.message);
     });
   }
+
+  static getAllProducts (req, res) {
+    product
+      .all()
+      .then( products => {
+        res.status(200).json(products);
+      })
+      .catch( error => res.status(400).json(error.message));
+  }
 }
 
 export default ProductController;

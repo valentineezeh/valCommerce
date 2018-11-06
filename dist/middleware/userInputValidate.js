@@ -39,14 +39,14 @@ var UserInputValidation = function () {
         });
       }
       if (req.body.Description == undefined) {
-        errors.push('Name is required');
+        errors.push('Description is required');
         return res.status(400).send({
           status: 'Error',
           message: errors
         });
       }
       if (req.body.Description == '') {
-        errors.push('Last name cannot be empty');
+        errors.push('Description cannot be empty');
         return res.status(400).send({
           status: 'Error',
           message: errors
@@ -67,7 +67,7 @@ var UserInputValidation = function () {
         });
       }
       if (req.body.Price == '') {
-        errors.push('Last name cannot be empty');
+        errors.push('Pricee cannot be empty');
         return res.status(400).send({
           status: 'Error',
           message: errors
