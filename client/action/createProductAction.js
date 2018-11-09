@@ -1,19 +1,26 @@
-import axios from 'axios';
-import config from '../config';
+import axios from "axios";
+import toastr from "toastr";
+import config from "../config";
+import PRODUCT_CREATED from "./types";
 
-export const PRODUCT_CREATED = 'PRODUCT_CREATED';
-
-export const productCreated = (product) => {
+export const productCreated = product => {
   return {
     type: PRODUCT_CREATED,
     product
   };
 };
 
-export const createProduct = (productData) => {
+export const createProduct = productData => {
   return dispatch => {
-    return axios.post(`${config.apiUrl}/api/product`, productData)
-      .then(() => dispatch( productCreated(productData)) )
-      .catch( error => { error; });
+    return axios
+      .post(`${config.apiUrl}/api/product/create`, productData)
+      .then(res => {
+        const message = res.data.message;
+        toastr.success(message, { timeOut: 5000 });
+        dispatch(productCreated(productData));
+      })
+      .catch(error => {
+        error;
+      });
   };
 };

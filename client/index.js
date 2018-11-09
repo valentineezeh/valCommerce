@@ -6,20 +6,21 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter } from 'react-router-dom';
 import App from './component/App';
+import rootReducer from './reducers/rootReducer';
 
 
-// const store = createStore(
-//   rootReducer,
-//   composeWithDevTools(
-//       applyMiddleware(thunk)
-//   )
-// );
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+      applyMiddleware(thunk)
+  )
+);
 
-//store={store}
+
 
 ReactDOM.render(
   <BrowserRouter>
-      <Provider >
+      <Provider store={store}>
         <App />
       </Provider>
   </BrowserRouter>, 
