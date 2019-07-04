@@ -28,6 +28,10 @@
   "bugs": {
     "url": "https://github.com/valentineezeh/valCommerce/issues"
   },
+    "engines": {
+    "npm": "6.7.0",
+    "node": "11.10.1"
+  },
   "homepage": "https://github.com/valentineezeh/valCommerce#readme",
   "dependencies": {
     "alertifyjs": "^1.11.2",
